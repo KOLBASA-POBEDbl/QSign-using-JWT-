@@ -1,0 +1,34 @@
+.ticketPlace {
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ticket {
+    position: relative;
+    width: 312px;
+    height: 400px;
+    background-color: green;
+    color: $mainColour;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 24px;
+        background: linear-gradient(-135deg, $mainColour 12px, transparent 0%), linear-gradient(135deg, $mainColour 12px, transparent 0%);
+        background-size: 24px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 24px;
+        background: linear-gradient(-45deg, $mainColour 12px, transparent 0%), linear-gradient(45deg, $mainColour 12px, transparent 0%);
+        background-size: 24px;
+    }
+}

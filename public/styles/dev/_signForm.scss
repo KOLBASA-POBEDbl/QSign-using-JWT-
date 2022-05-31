@@ -1,0 +1,25 @@
+#signUpForm {
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 24px;
+}
+
+#signInForm {
+    display: none;
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 24px;
+}
+
+#signButtonsSet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 100%;
+}
+
+#signIn {
+    display: none;
+}

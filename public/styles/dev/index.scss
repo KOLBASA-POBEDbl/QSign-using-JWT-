@@ -1,0 +1,18 @@
+@import 'reset';
+@import 'variables';
+@import 'iconFont';
+@import 'header';
+@import 'coolButton';
+@import 'ticket';
+@import 'signForm';
+@import 'changeUserDataForm';
+@import 'colum';
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+body {
+    min-height: 100vh;
+    color: $mainFirstColour;
+    background-color: $mainColour;
+    overflow: hidden;
+}

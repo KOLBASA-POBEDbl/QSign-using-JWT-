@@ -1,0 +1,21 @@
+#greetinForm {
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 24px;
+}
+
+#changeUserForm {
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 24px;
+    display: none;
+}
+
+#changeButtonsSet {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+###  Sign up
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "first_name": "Mikola",
+    "last_name": "Bimbovich",
+    "email": "bimba@bublik.com",
+    "phone": "0123456789",
+    "password": "VTFYhujnHBUIJkjnhbUjikmnjBHu"
+}
+
+### Login
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email": "bimba@bublik.com",
+    "password": "VTFYhujnHBUIJkjnhbUjikmnjBHu"
+}
+
+###  Find user
+GET http://localhost:8000/api/users/1
+Content-Type: application/json
+
+{
+}
+
+### Update user
+PUT http://localhost:8000/api/users/1
+Content-Type: application/json
+
+{
+    "first_name": "Mikola SS",
+    "last_name": "Bimbovich",
+    "email": "bimba@bublik.com",
+    "phone": "0123456789",
+    "password": "asdasdasd"
+}

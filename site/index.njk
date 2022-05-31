@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/dist/index.css">
+    <title>{{ siteInfo.title }}</title>
+</head>
+<body>
+    <header class="header">
+        <h2>QSign</h2>
+        <div class="header__search">
+            <div class="header__search__searchForm">
+                <button id="lupa" class="header__search__searchForm__lupa" onclick="searchUser()">
+                    <span class="icon-search"></span>
+                </button>
+                <input class="header__search__searchForm__input" autocomplate="off" type="text" id="search" name="search" placeholder="Do you really wanna search?">
+            </div>
+        </div>
+        <div id="logautPlace" class="header__logoutButtonPlace">
+            {% if siteInfo.signed %}
+                <a href="/api/login/logout"><button id="logoutButton" class="coolButton">Logout</button></a>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="ticketPlace">
+        <div class="ticket">
+            {% if siteInfo.signed %}
+            <div id="greetinForm">
+                <div class="colum">
+                    <h3>Greatings!</h3>
+                    <h4>What a great honor for you,<br> <span class="userData">{{ user.name }}</span> the <span class="userData">{{ user.id }}</span>th,<br> to be registered in this application!</h4>
+                    <h5>Joking.</h5>
+                </div>
+            </div>
+            <div id="changeUserForm"><div class="colum">
+                <h3>User data</h3>
+                <input type="text" autocomplete="off" maxlength="255" id="changeFirstName" placeholder="First name" disabled>
+                <input type="text" autocomplete="off" maxlength="255" id="changeLastName" placeholder="Last name" disabled>
+                <input type="text" autocomplete="off" maxlength="255" id="changeEmail" placeholder="Email" disabled>
+                <input type="number" autocomplete="off" maxlength="13" id="changePhone" placeholder="Phone" onKeyPress="if(this.value.length == 13) return false;" disabled>
+                <input type="password" autocomplete="off" maxlength="255" id="changePassword" placeholder="Password" disabled>
+                <input type="password" autocomplete="off" maxlength="255" id="changePasswordCheck" placeholder="Password again" disabled>
+            </div>
+        </div>
+        <div id="changeButtonsSet">
+            <button class="coolButton" id="getPermission" onclick="getPermission()">Get permission</button>
+            <button class="coolButton" id="sendChanges" onclick="sendChanges()" disabled>Send changes</button>
+        </div>
+            {% endif %}
+            
+            {% if not siteInfo.signed %}
+                <div id="signInForm">
+                    <div class="colum">
+                        <h3>Sign IN</h3>
+                        <input type="text" autocomplete="off" id="emailLog" placeholder="Email">
+                        <input type="password" autocomplete="off" id="passwordLog" placeholder="Password">
+                    </div>
+                </div>
+
+                <div id="signUpForm">
+                    <div class="colum">
+                        <h3>Sign UP</h3>
+                        <input type="text" autocomplete="off" maxlength="255" id="first_name" placeholder="First name">
+                        <input type="text" autocomplete="off" maxlength="255" id="last_name" placeholder="Last name">
+                        <input type="text" autocomplete="off" maxlength="255" id="email" placeholder="Email">
+                        <input type="number" autocomplete="off" maxlength="13" id="phone" placeholder="Phone" onKeyPress="if(this.value.length == 13) return false;">
+                        <input type="password" autocomplete="off" maxlength="255" id="password" placeholder="Password">
+                        <input type="password" autocomplete="off" maxlength="255" id="passwordCheck" placeholder="Password again">
+                    </div>
+                </div>
+                <div id="signButtonsSet">
+                    <button class="coolButton" id="signIn" onclick="signIn()">Sign In</button>
+                    <button class="coolButton" id="signUp" onclick="signUp()">Sign Up</button>
+                    <button class="coolButton" id="switch" onclick="switchMode()">Go to Sign In</button>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="scripts/dist/jquery360/jquery-3.6.0.min.js"></script>
+<script src="scripts/dist/index.js"></script>
+</html>
